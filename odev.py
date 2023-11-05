@@ -11,7 +11,7 @@ for i in range(1, n):
     yaklasik_deger *= (-1) * x ** (2 * i) / (2 * i * (2 * i - 1))
     ilk_terim += yaklasik_deger
     
-kesme_hatasi = abs(gercek_deger - ilk_terim)
+kesme_hatasi = abs(gercek_deger - ilk_terim) # abs() Mutlak değer fonksiyonu
 
 print("Yaklaşık Değer:", ilk_terim)
 print("Gerçek Değer:", gercek_deger)
