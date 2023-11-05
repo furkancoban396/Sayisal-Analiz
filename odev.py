@@ -10,7 +10,7 @@ def usAlma(sayi, adimsayisi):
         us *= sayi
     return us
 
-x = 3.14 / 5
+pi = 3.14 / 5
 adimsayisi = int(input("Kaç terimli hesaplamak istersiniz? "))  # Kullanıcıdan terim sayısını alın
 gercekDeger = 0.80901699437
 
@@ -24,9 +24,9 @@ for adim in range(1, adimsayisi + 1):
     hesaplananDeger = 0
     while i <= adim:
         if i % 2 == 0:
-            hesaplananDeger += usAlma(x, j) / faktoriyelAlma(j)
+            hesaplananDeger += usAlma(pi, j) / faktoriyelAlma(j)
         else:
-            hesaplananDeger -= usAlma(x, j) / faktoriyelAlma(j)
+            hesaplananDeger -= usAlma(pi, j) / faktoriyelAlma(j)
         i += 1
         j += 2
     kesmeHatasi = gercekDeger - hesaplananDeger
