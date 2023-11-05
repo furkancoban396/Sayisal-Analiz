@@ -1,33 +1,18 @@
-def faktoriyelAlma(adim):
-    faktoriyel = 1
-    for i in range(1, adim + 1):
-        faktoriyel *= i
-    return faktoriyel
+x = 3.14159265359 / 5
 
-def usAlma(sayi, adimsayisi):
-    us = 1
-    for i in range(0, adimsayisi):
-        us *= sayi
-    return us
+n = int(input("Kaç terimli hesaplamak istersiniz? "))
 
-pi = 3.14 / 5
-adimsayisi = int(input("Kaç terimli hesaplamak istersiniz?\n\n "))
-gercekDeger = 0.80901699437
+gercek_deger = 0.8090169943749475 
 
-hesaplananDeger = 0
-i = 0
-j = 0
+ilk_terim = 1.0
+yaklasik_deger = 1.0
 
-for adim in range(1, adimsayisi + 1):
-    i = 0
-    j = 0
-    hesaplananDeger = 0
-    while i <= adim:
-        if i % 2 == 0:
-            hesaplananDeger += usAlma(pi, j) / faktoriyelAlma(j)
-        else:
-            hesaplananDeger -= usAlma(pi, j) / faktoriyelAlma(j)
-        i += 1
-        j += 2
-    kesmeHatasi = gercekDeger - hesaplananDeger
-    print(f"\n{adim}. Mertebedeki;\nHesaplanan Deger: {hesaplananDeger} \nKesme Hatasi: {kesmeHatasi}")
+for i in range(1, n):
+    yaklasik_deger *= (-1) * x ** (2 * i) / (2 * i * (2 * i - 1))
+    ilk_terim += yaklasik_deger
+    
+kesme_hatasi = abs(gercek_deger - ilk_terim)
+
+print("Yaklaşık Değer:", ilk_terim)
+print("Gerçek Değer:", gercek_deger)
+print("Kesme Hatası:", kesme_hatasi)
